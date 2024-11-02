@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <style>
+    body {
+        background-color: aqua; 
+    }
+   </style>
+</head>
+<body>
+    
+    <div id="satrancTahtası" align="center"></div>
+    <script>
+        
+        let boyut = prompt("Sayı giriniz");
+        let satrancTahtası = ""; 
+
+        for (let i = 0; i < boyut; i++) {
+            for (let j = 0; j < boyut; j++) {
+                
+                if ((i + j) % 2 === 0) {
+                    satrancTahtası = "⬜"; 
+                } else {
+                    satrancTahtası = "⬛"; 
+                }
+            }
+            satrancTahtası += "<br>";
+        }
+
+        
+     document.getElementById("satrancTahtası").innerHTML = satrancTahtası;
+    </script>
+
+</body>
+</html>

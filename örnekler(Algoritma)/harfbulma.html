@@ -1,0 +1,35 @@
+
+<!-- kelime içindeki harf sayısını bulma 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /* for: belirtilen koşul doğru olduğu sürece komutların çalıştırılmasını sağlar
+    let: kodun okunabilirliğini ve anlaşılabilirliğini artırır ve hataların önüne geçmeyi sağlar
+    === : eşitlik operatörüdür. Bu operatör, iki değerin hem değerini hem de türünü karşılaştırır. Yani, iki değer:
+     */
+    var a = prompt("istenen kelime:");
+    var b = prompt("istenen harf");
+    var sonuc = 0; /*  başlangıç değerini 0 olarak ayarlar. */
+
+    for (let i = 0; i < a.length; i++) {
+        if (a[i] === b) {
+            sonuc++;/* Eğer koşul sağlanıyorsa, sonuc değişkeninin değerini 1 artırır */
+        }
+    }
+
+    alert("Sonuc : " + sonuc);
+
+</script>
+
+</html>

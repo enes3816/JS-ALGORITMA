@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+html, body {
+    height: 100%; 
+}
+
+.container-fluid {
+    height: 100%; 
+}
+
+.navbar {
+    background-color: rgb(27, 150, 221);
+    height: 10vh; 
+    display: flex; 
+    align-items: center; 
+    padding: 0 10px; 
+    position: relative;
+}
+
+.logo {
+    width: 60px; 
+    height: auto; 
+    margin-right: 10px; 
+    flex-shrink: 0; 
+}
+
+.navbar-title {
+    text-align: center; 
+    font-style: oblique;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5rem; 
+    position: absolute; 
+    left: 50%;
+    transform: translateX(-50%); 
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) {
+    .navbar-title {
+        font-size: 1.2rem; 
+    }
+
+    .logo {
+        width: 50px; 
+    }
+}
+
+.kutular {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    align-items: stretch; 
+    padding: 10px; 
+}
+
+.kutu {
+    flex: 1 1 30%; 
+    margin: 10px; 
+    background-color: lightblue; 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    height: 150px; 
+}
+
+@media (max-width: 768px) {
+    .kutu {
+        flex: 1 1 100%; 
+        height: auto;
+        margin: 5px 0; 
+    }
+}
+
+
+.accordion {
+    width: 100%;
+    padding: 20px; 
+}
+
+.footer {
+    background-color: gray;
+    color: white;
+    width: 100%; 
+    height: 10vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.accordion-item {
+    margin: 10px 0; 
+}
+
+.image-container {
+    width: 100%;
+    height: 400px; 
+    overflow: hidden;
+}
+
+.full-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.container2 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sol {
+    background: url(depositphotos_9788530-stock-photo-new-york-city-skyline.jpg) no-repeat center center;
+    flex: 1 1 50%; 
+    height: 50vh; 
+    background-size: cover; 
+}
+
+.sag {
+    flex: 1 1 50%; 
+}
+
+@media (max-width: 768px) {
+    .navbar-title {
+        font-size: 1.5rem;
+    }
+
+    .kutu {
+        flex: 1 1 100%; 
+        margin: 5px 0; 
+    }
+
+    .sol, .sag {
+        flex: 1 1 100%; 
+        height: auto; 
+    }
+
+    .image-container {
+        height: 200px; 
+    }
+
+    .full-image {
+        height: 200px; 
+    }
+}
