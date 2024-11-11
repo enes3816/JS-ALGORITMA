@@ -1,10 +1,11 @@
-document.querySelector('button').addEventListener('click', function() {
-    let not1 = document.getElementById('not1').value;
-    let not2 = document.getElementById('not2').value;
+var not1 = prompt(" 1. Notunuzu giriniz:");
+var not2 = prompt(" 2. Notunuzu giriniz:");
 
-    if (not1 && not2) {
-        alert('Notlarınız Gönderildi!\n1. Not: ' + not1 + '\n2. Not: ' + not2);
-    } else {
-        alert('Lütfen her iki notu da girin.');
-    }
-});
+var ortalama = (vize1 * 0.4) + (vize2 * 0.6);
+
+
+if (ortalama >= 50) {
+    alert("Geçtiniz."+ " İşte Notunuz : "+ ortalama);
+} else {
+    alert("Geçemediniz!"+" İşte Notunuz : "+ ortalama);
+}
