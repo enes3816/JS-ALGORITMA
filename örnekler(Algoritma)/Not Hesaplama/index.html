@@ -1,17 +1,26 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
+    <title>Giriş Sayfası</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <input type="text" id="not1" placeholder="1. Not Giriniz"> <br>
-    <input type="text" id="not2" placeholder="2. Not Giriniz"> <br>
+    <div class="background-video">
+        <video autoplay muted loop id="background-video">
+            <source src="background-video.mp4" type="video/mp4">
+        </video>
+    </div>
+    
+    <div class="kutu">
+        <h1>Notlarınızı Girin</h1>
+        <input type="text" id="not1" placeholder="1. Not Giriniz">
+        <input type="text" id="not2" placeholder="2. Not Giriniz">
+        <button type="button">Gönder</button>
+    </div>
 
-    <div class="gonder"></div><button type="button">Gönder</button>
+    <script src="script.js"></script>
 </body>
 </html>

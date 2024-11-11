@@ -1,0 +1,93 @@
+/* Genel Sayfa Stili */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Arka Plan Video */
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#background-video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* Kutu Stili */
+.kutu {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+/* Kutu Hover Efekti */
+.kutu:hover {
+    transform: scale(1.05);
+}
+
+/* Başlık Stili */
+.kutu h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 500;
+    color: #fff;
+}
+
+/* Input Alanı Stili */
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #4e73df;
+}
+
+/* Button Stili */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: #4e73df;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2e59d9;
+}
