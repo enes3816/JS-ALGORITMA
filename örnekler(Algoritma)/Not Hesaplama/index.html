@@ -9,17 +9,20 @@
 <body>
     <div class="background-video">
         <video autoplay muted loop id="background-video">
-            <source src="yzlm.mp4" type="video/mp4">
+            <source src="kod.mp4" type="video/mp4">
         </video>
     </div>
     
     <div class="kutu">
         <h1>Notlarınızı Girin</h1>
-        <input type="text" id="not1" placeholder="1. Not Giriniz">
-        <input type="text" id="not2" placeholder="2. Not Giriniz">
-        <button type="button" onclick="notlariHesapla()">Gönder</button> <br><br>
+        <input type="number" id="not1" placeholder="1. Not Giriniz">
+        <input type="number" id="not2" placeholder="2. Not Giriniz">
+        <input type="number" id="not3" placeholder="3. Not Giriniz">
+        <button type="button" onclick="Hesapla()">Gönder</button> <br><br>
         <h3 id="sonuc"></h3>
     </div>
+
+    
 
     <script src="script.js"></script>
 </body>
