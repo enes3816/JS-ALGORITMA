@@ -1,11 +1,15 @@
-var not1 = prompt(" 1. Notunuzu giriniz:");
-var not2 = prompt(" 2. Notunuzu giriniz:");
+function notlariHesapla() {
+    // Kullanıcıdan alınan notları al
+    var sinav1 = Number(document.getElementById("not1").value);
+    var sinav2 = Number(document.getElementById("not2").value);
 
-var ortalama = (not1) + (not2) / 2;
+    // Ortalama hesapla
+    var ortalama = (sinav1 + sinav2) / 2;
 
-
-if (ortalama >= 50) {
-    alert("Geçtiniz."+ " İşte Notunuz : "+ ortalama);
-} else {
-    alert("Geçemediniz!"+" İşte Notunuz : "+ ortalama);
+    // Sonuçları yazdır
+    if (ortalama >= 50) {
+        document.getElementById("sonuc").innerHTML = "Geçtiniz. İşte Notunuz: " + ortalama;
+    } else {
+        document.getElementById("sonuc").innerHTML = "Geçemediniz! İşte Notunuz: " + ortalama;
+    }
 }

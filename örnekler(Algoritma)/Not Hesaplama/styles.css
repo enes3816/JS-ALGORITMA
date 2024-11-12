@@ -1,4 +1,3 @@
-/* Genel Sayfa Stili */
 * {
     margin: 0;
     padding: 0;
@@ -8,14 +7,14 @@
 body, html {
     height: 100%;
     font-family: 'Arial', sans-serif;
-    background-color: #000;
+    
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
 }
 
-/* Arka Plan Video */
+
 .background-video {
     position: absolute;
     top: 0;
@@ -31,25 +30,25 @@ body, html {
     height: 100%;
 }
 
-/* Kutu Stili */
+
 .kutu {
-    background: rgba(0, 0, 0, 0.7);
+   
     padding: 40px;
     border-radius: 10px;
     text-align: center;
     color: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    
     width: 300px;
     height: auto;
     transition: transform 0.3s ease;
 }
 
-/* Kutu Hover Efekti */
+
 .kutu:hover {
     transform: scale(1.05);
 }
 
-/* Başlık Stili */
+
 .kutu h1 {
     margin-bottom: 20px;
     font-size: 24px;
@@ -57,7 +56,7 @@ body, html {
     color: #fff;
 }
 
-/* Input Alanı Stili */
+
 input[type="text"] {
     width: 100%;
     padding: 12px;
@@ -75,7 +74,7 @@ input[type="text"]:focus {
     border-color: #4e73df;
 }
 
-/* Button Stili */
+
 button {
     width: 100%;
     padding: 12px;
