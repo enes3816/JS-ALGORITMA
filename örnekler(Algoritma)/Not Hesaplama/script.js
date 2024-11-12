@@ -1,30 +1,62 @@
-function Hesapla() {
-    
-    var sinav1 = Number(document.getElementById("not1").value);
-    var sinav2 = Number(document.getElementById("not2").value);
-    var sinav3 = Number(document.getElementById("not3").value);
-    
-  
+// script.js
 
-   
-    if (sinav1 < 0 || sinav1 > 100 || sinav2 < 0 || sinav2 > 100 || sinav3 < 0 || sinav3 > 100) {
-        document.getElementById("sonuc").innerHTML = "Notlar 0 ile 100 arasında olmalıdır!";
-        return;
-    }
+document.getElementById("ekleButton").addEventListener("click", function(event) {
+    event.preventDefault(); // Sayfanın yenilenmesini engelle
 
-    
-    var ortalama = (sinav1 + sinav2 + sinav3) / 3;
-    
-    
-    if (ortalama >= 50) {
-        document.getElementById("sonuc").innerHTML = "Geçtiniz! İşte Notunuz: " + ortalama.toFixed(2);//ortalama.toFixed(2) ifadesi, ortalamanın yalnızca iki ondalıklı kısmını gösterir. 
+    // Ders adı ve notunu al
+    const dersAdi = document.getElementById("dersAdi").value.trim();
+    const dersNotu = document.getElementById("dersNotu").value.trim();
+
+    // Eğer ders adı ve notu girildiyse, ekleyelim
+    if (dersAdi && dersNotu) {
+        // Yeni bir ders ve not kutusu oluşturalım
+        const notlarDiv = document.getElementById("notlar");
+
+        // Yeni bir div kart oluştur
+        const dersNotuDiv = document.createElement("div");
+        dersNotuDiv.classList.add("kart");
+
+        // İçeriği oluştur
+        dersNotuDiv.innerHTML = `
+            <h3>${dersAdi}</h3>
+            <p>Not: ${dersNotu}</p>
+        `;
+
+        // Kartı "notlar" alanına ekleyelim
+        notlarDiv.appendChild(dersNotuDiv);
+
+        // Giriş alanlarını temizle
+        document.getElementById("dersAdi").value = '';
+        document.getElementById("dersNotu").value = '';
+
+        // Ortalama hesaplama
+        hesaplaOrtalama();
     } else {
-        
-        var enDusukNot = 50 - ortalama; 
+        alert("Lütfen ders adı ve notunu girin.");
+    }
+});
 
-        
-        document.getElementById("sonuc").innerHTML = 
-            "Geçemediniz! İşte Notunuz: " + ortalama.toFixed(2) + 
-            ". Geçebilmek için diğer sınavlardan almanız gereken not: " + enDusukNot.toFixed(2);
+// Ortalama hesaplama fonksiyonu
+function hesaplaOrtalama() {
+    const kartlar = document.querySelectorAll(".kart");
+    let toplam = 0;
+    let dersSayisi = 0;
+
+    kartlar.forEach(kart => {
+        const dersSonuc = kart.querySelector("p");
+        if (dersSonuc && dersSonuc.textContent) {
+            const not = parseFloat(dersSonuc.textContent.replace("Not: ", ""));
+            if (!isNaN(not)) {
+                toplam += not;
+                dersSayisi++;
+            }
+        }
+    });
+
+    if (dersSayisi > 0) {
+        const ortalama = toplam / dersSayisi;
+        document.getElementById("ortalama").textContent = `Ortalama: ${ortalama.toFixed(2)}`;
+    } else {
+        document.getElementById("ortalama").textContent = "Henüz not eklenmedi.";
     }
 }

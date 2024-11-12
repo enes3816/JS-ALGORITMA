@@ -4,22 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <title>Sınav Notları</title>
 </head>
-
 <body>
-    <div class="background-video">
-        <video autoplay muted loop id="background-video">
-            <source src="kod.mp4" type="video/mp4">
-        </video>
-    </div>
-    
-    <div class="kutu">
-        <h1>Notlarınızı Girin</h1>
-        <input type="number" id="not1" placeholder="1. Not Giriniz">
-        <input type="number" id="not2" placeholder="2. Not Giriniz">
-        <input type="number" id="not3" placeholder="3. Not Giriniz">
-        <button type="button" onclick="Hesapla()">Gönder</button> <br><br>
-        <h3 id="sonuc"></h3>
+    <div id="sayfa">
+        
+        <div id="ustAlan">
+            <h1>Ders Adı ve Notu</h1>
+            <div id="dersAdlari">
+                <input type="text" id="dersAdi" placeholder="Ders Adı" required>
+                <input type="number" id="dersNotu" placeholder="Ders Notu" required>
+                <button id="ekleButton">Ekle</button>
+            </div>
+        </div>
+
+        
+        <div id="KapsayiciAlan">
+            
+            <div id="solAlan">
+                <h2>Video Alanı</h2>
+                <video autoplay loop muted width="100%" controls>
+                    <source  src="kod.mp4" type="video/mp4">
+                    Tarayıcınız video etiketini desteklemiyor.
+                </video>
+            </div>
+
+           
+            <div id="sagAlan">
+                <h2>Ortalama Hesaplama</h2>
+                <p id="ortalama">Henüz not eklenmedi.</p>
+                <div id="notlar">
+                    
+                </div>
+            </div>
+        </div>
+
+       
+        <div id="altAlan">
+            <p>Alt Alan İçeriği</p>
+        </div>
     </div>
 
     <script src="script.js"></script>
