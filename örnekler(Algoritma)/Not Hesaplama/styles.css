@@ -8,12 +8,10 @@ body, html {
     height: 100%;
     font-family: 'Arial', sans-serif;
     
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    place-items: center;
     overflow: hidden;
 }
-
 
 .background-video {
     position: absolute;
@@ -30,24 +28,25 @@ body, html {
     height: 100%;
 }
 
-
 .kutu {
-   
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+    justify-items: center;
     padding: 40px;
     border-radius: 10px;
     text-align: center;
     color: #fff;
-    
     width: 300px;
     height: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease;
 }
-
 
 .kutu:hover {
     transform: scale(1.05);
 }
-
 
 .kutu h1 {
     margin-bottom: 20px;
@@ -55,7 +54,6 @@ body, html {
     font-weight: 500;
     color: #fff;
 }
-
 
 input[type="number"] {
     width: 100%;
@@ -74,7 +72,6 @@ input[type="number"]:focus {
     border-color: #4e73df;
 }
 
-
 button {
     width: 100%;
     padding: 12px;
@@ -89,4 +86,10 @@ button {
 
 button:hover {
     background-color: #2e59d9;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
 }
