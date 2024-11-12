@@ -1,7 +1,3 @@
-// script.js
-
-document.getElementById("ekleButton").addEventListener("click", function(event) {
-    event.preventDefault(); // Sayfanın yenilenmesini engelle
 
     // Ders adı ve notunu al
     const dersAdi = document.getElementById("dersAdi").value.trim();
@@ -34,7 +30,7 @@ document.getElementById("ekleButton").addEventListener("click", function(event) 
     } else {
         alert("Lütfen ders adı ve notunu girin.");
     }
-});
+;
 
 // Ortalama hesaplama fonksiyonu
 function hesaplaOrtalama() {
