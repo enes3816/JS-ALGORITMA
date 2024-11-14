@@ -1,119 +1,140 @@
-
 body {
-    font-size: 62.5%;
-    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 62.5%;
+    background-color: #f4f4f4; 
 }
 
-#sayfa {
-    width: 80%;
+
+.grid-container {
+    width: 960px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 130px 700px 130px; 
+    grid-template-rows: 75px auto 75px;   
+    grid-template-areas:
+        "item1 item1 item1"   
+        "item2 item3 item5"   
+        "item4 item4 item4";  
+    gap: 10px;
+    min-height: 100vh; 
 }
 
-
-#ustAlan {
-    width: 100%;
-    background-color: #0C9;
+#ust {
+    grid-area: item1;
+    background-color: #7C84C0;
     color: white;
-    padding: 20px;
     text-align: center;
-    box-sizing: border-box;
+    line-height: 75px;
+    font-size: 24px;
 }
 
-#dersAdlari {
-    margin-top: 20px;
-}
-
-#dersAdlari input {
-    padding: 10px;
-    margin: 10px;
-    width: 200px;
-    box-sizing: border-box;
-    font-size: 1.2em;
-    border: 2px solid #fff;
-    border-radius: 5px;
-}
-
-#dersAdlari button {
-    padding: 10px 20px;
-    background-color: #099;
+#sol {
+    grid-area: item2;
+    background-color: #0D275A;
     color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2em;
-    border-radius: 5px;
-    margin-top: 20px;
+    text-align: center;
+    line-height: 350px;
+    text-transform: uppercase;
 }
 
-#dersAdlari button:hover {
-    background-color: #0C6;
+#orta {
+    grid-area: item3;
+    background-color: #101232;
+    color: aliceblue;
+    padding: 20px;
 }
 
-
-#KapsayiciAlan {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
+#orta h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-#solAlan {
-    width: 48%;
-    background-color: #0C9;
+#sag {
+    grid-area: item5;
+    background-color: #0D275A;
+    color: white;
+    text-align: center;
+    line-height: 350px;
+    text-transform: uppercase;
+}
+
+#alt {
+    grid-area: item4;
+    background-color: #27989A;
+    color: white;
+    text-align: center;
+    line-height: 75px;
+    font-size: 16px;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    background-color: #101232;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    color: white;
 }
 
-#solAlan video {
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
     width: 100%;
-    border-radius: 8px;
-}
-
-#sagAlan {
-    width: 48%;
-    background-color: #F90;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-#sagAlan h2 {
-    margin-top: 0;
-}
-
-#notlar {
-    margin-top: 20px;
-}
-
-.kart {
-    background-color: #0CF;
+    padding: 8px;
+    margin-bottom: 10px;
+    font-size: 16px;
     border: 1px solid #ccc;
-    padding: 20px;
-    margin-top: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
 }
 
-.kart h3 {
-    margin: 0;
-    font-size: 1.5em;
-}
-
-.kart p {
-    margin: 5px 0;
-    font-size: 1.2em;
-}
-
-
-#altAlan {
-    width: 100%;
-    height: 100px;
-    background-color: #0CF;
-    text-align: center;
-    padding-top: 30px;
+button {
+    background-color: #27989A;
     color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #1c6b6f;
+}
+
+
+.not-kutusu {
+    background-color: #27989A;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 8px;
+    color: white;
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 16px;
+    line-height: 120px; 
+}
+
+
+#notOrtalamalar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px; 
 }

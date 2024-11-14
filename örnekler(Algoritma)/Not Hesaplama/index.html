@@ -1,50 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Sınav Notları</title>
-</head>
-<body>
-    <div id="sayfa">
-        
-        <div id="ustAlan">
-            <h1>Ders Adı ve Notu</h1>
-            <div id="dersAdlari">
-                <input type="text" id="dersAdi" placeholder="Ders Adı" required>
-                <input type="number" id="dersNotu" placeholder="Ders Notu" required>
-                <button id="ekleButton">Ekle</button>
-            </div>
-        </div>
-
-        
-        <div id="KapsayiciAlan">
-            
-            <div id="solAlan">
-                <h2>Video Alanı</h2>
-                <video autoplay loop muted width="100%" controls>
-                    <source  src="kod.mp4" type="video/mp4">
-                    
-                </video>
-            </div>
-
-           
-            <div id="sagAlan">
-                <h2>Ortalama Hesaplama</h2>
-                <p id="ortalama">Henüz not eklenmedi.</p>
-                <div id="notlar">
-                    
-                </div>
-            </div>
-        </div>
-
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grid-container">
+      
+      <div class="item1" id="ust">
        
-        <div id="altAlan">
-            <p>Alt Alan İçeriği</p>
+      </div>
+
+     
+      <div class="item2" id="sol">
+        
+      </div>
+
+     
+      <div class="item3" id="orta">
+        <h1>Not Hesaplama</h1>
+
+        
+        <div class="form-container">
+          
+          <div class="form-group">
+            <label for="dersAdi">Ders Adı</label>
+            <input type="text" id="dersAdi" placeholder="Dersin adını girin" />
+          </div>
+
+          
+          <div class="form-group">
+            <label for="dersNotu">Ders Notu</label>
+            <input type="number" id="dersNotu" placeholder="Ders notunu girin" />
+          </div>
+
+          
+          <button onclick="hesapla()">Hesapla</button>
+
+          
+          <div id="notOrtalamalar"></div>
         </div>
+      </div>
+
+      
+      <div class="item5" id="sag">
+        
+      </div>
+
+    
+      <div class="item4" id="alt">
+        
+      </div>
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
