@@ -2,23 +2,23 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 62.5%;
-    background-color: #f4f4f4; 
+    font-size: 62.5%; /* 1rem = 10px */
+    background-color: #f4f4f4;
+    min-height: 100vh; /* Sayfanın yüksekliği ekran boyutuna uyacak şekilde ayarlanır */
+    overflow-x: hidden; /* Yatay kaydırmayı engeller */
 }
 
-
+/* Grid Yapısı */
 .grid-container {
-    width: 960px;
-    margin: 0 auto;
     display: grid;
-    grid-template-columns: 130px 700px 130px; 
-    grid-template-rows: 75px auto 75px;   
+    grid-template-columns: 1fr 3fr 1fr; /* Sol ve sağ 1 birim, orta 3 birim */
+    grid-template-rows: 100px 1fr 100px; /* Üst ve alt 100px, orta bölüm kalan alan */
     grid-template-areas:
-        "item1 item1 item1"   
-        "item2 item3 item5"   
-        "item4 item4 item4";  
+        "item1 item1 item1"   /* Üst bölüm */
+        "item2 item3 item5"   /* Sol, orta, sağ */
+        "item4 item4 item4";  /* Alt bölüm */
     gap: 10px;
-    min-height: 100vh; 
+    min-height: 100vh; /* Sayfa yüksekliğini en az ekran boyutu kadar yap */
 }
 
 #ust {
@@ -26,7 +26,7 @@ body {
     background-color: #7C84C0;
     color: white;
     text-align: center;
-    line-height: 75px;
+    line-height: 100px;  
     font-size: 24px;
 }
 
@@ -35,8 +35,10 @@ body {
     background-color: #0D275A;
     color: white;
     text-align: center;
-    line-height: 350px;
+    line-height: 100%;  
     text-transform: uppercase;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 #orta {
@@ -44,10 +46,16 @@ body {
     background-color: #101232;
     color: aliceblue;
     padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+
 #orta h1 {
-    font-size: 24px;
+    font-size: 2.4rem;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -57,8 +65,10 @@ body {
     background-color: #0D275A;
     color: white;
     text-align: center;
-    line-height: 350px;
+    line-height: 100%;  
     text-transform: uppercase;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 #alt {
@@ -66,18 +76,20 @@ body {
     background-color: #27989A;
     color: white;
     text-align: center;
-    line-height: 75px;
+    line-height: 100px;  
     font-size: 16px;
 }
 
 .form-container {
     max-width: 600px;
+    width: 100%;
     margin: 0 auto;
     text-align: left;
     background-color: #101232;
     padding: 20px;
     border-radius: 8px;
     color: white;
+    box-sizing: border-box;
 }
 
 .form-group {
@@ -91,7 +103,7 @@ body {
 
 .form-group input {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     margin-bottom: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
@@ -107,34 +119,41 @@ button {
     font-size: 16px;
     cursor: pointer;
     width: 100%;
+    margin-bottom: 20px;
 }
 
 button:hover {
     background-color: #1c6b6f;
 }
-
-
-.not-kutusu {
-    background-color: #27989A;
-    padding: 20px;
-    margin-top: 20px;
-    text-align: center;
-    border-radius: 8px;
+#ortalamaSonuc {
     color: white;
-    width: 150px;
-    height: 150px;
-    display: inline-block;
-    margin-right: 10px;
-    font-size: 16px;
-    line-height: 120px; 
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;  /* Hesapla butonunun hemen altında görünmesini sağlar */
 }
-
 
 #notOrtalamalar {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    justify-content: center;
+    justify-content: flex-start;  /* Kartları sola hizalar */
     align-items: center;
-    margin-bottom: 30px; 
+    margin-bottom: 30px;
 }
+
+/* Not Kartları */
+.not-kutusu {
+    background-color: #27989A;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    color: white;
+    width: 30%; /* Kartların genişliği */
+    max-width: 250px; /* Kartların maksimum genişliği */
+    height: 150px;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 120px;
+}
+ 
