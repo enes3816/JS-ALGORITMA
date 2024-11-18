@@ -21,14 +21,7 @@ function hesapla() {
     // Yeni kart ekleniyor
     var yeniKart = document.createElement('div');
     yeniKart.classList.add('not-kutusu');
-
-    // Kartın içine içerik ekliyoruz: Ders Adı ve Not
-    yeniKart.innerHTML = `
-        <div class="kart-icerik">
-            <p>Ders: ${dersAdi}</p>
-            <p>Not: ${dersNotu}</p>
-        </div>
-    `;
+    yeniKart.innerHTML = "Ders: " + dersAdi + " Not: " + dersNotu;
 
     // Kartları "notOrtalamalar" bölümüne ekliyoruz
     document.getElementById('notOrtalamalar').appendChild(yeniKart);
