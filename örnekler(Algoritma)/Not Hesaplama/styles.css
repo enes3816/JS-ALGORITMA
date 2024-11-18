@@ -53,7 +53,6 @@ body {
     align-items: center;
 }
 
-
 #orta h1 {
     font-size: 2.4rem;
     text-align: center;
@@ -125,6 +124,7 @@ button {
 button:hover {
     background-color: #1c6b6f;
 }
+
 #ortalamaSonuc {
     color: white;
     text-align: center;
@@ -140,6 +140,9 @@ button:hover {
     justify-content: flex-start;  /* Kartları sola hizalar */
     align-items: center;
     margin-bottom: 30px;
+    max-height: 400px;  /* Yüksekliği sınırlıyoruz */
+    overflow-y: auto;   /* Dikey kaydırma çubuğunu ekliyoruz */
+    padding-right: 10px;  /* Sağda biraz boşluk bırakıyoruz */
 }
 
 /* Not Kartları */
@@ -156,4 +159,3 @@ button:hover {
     font-size: 16px;
     line-height: 120px;
 }
- 
