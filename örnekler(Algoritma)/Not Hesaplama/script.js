@@ -1,7 +1,6 @@
-let dersSayisi = 0;
+let dersAdi = "";
 let toplamNot = 0;
 let hedefOrtalama = 50; 
-let dersAdi = "";
 
 function hesapla() {
     dersAdi = document.getElementById('dersAdi').value;
@@ -22,27 +21,29 @@ function hesapla() {
 
     let eksikNot = hesaplaEksikNot(ortalama);
 
-    
-    let notlar = [dersNotu1, dersNotu2, dersNotu3];
-    
-    notlar.forEach(function(dersNotu, index) {
-        let yeniKart = document.createElement('div');
-        yeniKart.classList.add('not-kutusu');
-        yeniKart.innerHTML = `
-            <h3>${dersAdi} - Not </h3>
-            <p>Not: ${dersNotu}</p>
-        `;
-        document.getElementById('notOrtalamalar').appendChild(yeniKart);
-    });
+    // Not kutusunu oluştur
+    let notKutusu = document.createElement('div');
+    notKutusu.classList.add('not-kutusu');
+    notKutusu.innerHTML = `
+        <h3>${dersAdi} - Notlar</h3>
+        <p>1. Not: ${dersNotu1}</p>
+        <p>2. Not: ${dersNotu2}</p>
+        <p>3. Not: ${dersNotu3}</p>
+        <p><strong>Ortalama: ${ortalama.toFixed(2)}</strong></p>
+        <p><strong>Minimum Geçmesi Gereken Not: ${eksikNot}</strong></p>
+    `;
+    document.getElementById('notOrtalamalar').innerHTML = ''; 
+    document.getElementById('notOrtalamalar').appendChild(notKutusu);
 
-    let ortalamaKart = document.createElement('div');
-    ortalamaKart.classList.add('not-kutusu');
-    ortalamaKart.innerHTML = `
-        <h3>${dersAdi} - Ortalaması</h3>
-        <p>Ortalama: ${ortalama.toFixed(2)}</p>
-        <p>Minimum Geçmesi Gereken Not: ${eksikNot}</p>`;
-    document.getElementById('notOrtalamalar').appendChild(ortalamaKart);
+    // Genel ortalamayı hesapla ve ekle
+    let genelOrtalama = (ortalama).toFixed(2);
+    let genelOrtalamaDiv = document.createElement('div');
+    genelOrtalamaDiv.innerHTML = `
+        <p><strong>Genel Ortalama: ${genelOrtalama}</strong></p>
+    `;
+    document.getElementById('genelOrtalama').appendChild(genelOrtalamaDiv);
 
+    
     document.getElementById('dersAdi').value = '';
     document.getElementById('dersNotu1').value = '';
     document.getElementById('dersNotu2').value = '';
