@@ -8,46 +8,46 @@
   <body>
     <div class="grid-container">
       <div class="item1" id="ust">
-
+        <h1>Not Hesaplama</h1>
       </div>
 
       <div class="item2" id="sol">
-
       </div>
 
       <div class="item3" id="orta">
-        
-        <h1>Not Hesaplama</h1>
-
         <div class="form-container">
-
           <div class="form-group">
             <label for="dersAdi">Ders Adı</label>
             <input type="text" id="dersAdi" placeholder="Dersin adını girin" />
           </div>
 
           <div class="form-group">
-            <label for="dersNotu">Ders Notu</label>
-            <input type="number" id="dersNotu" placeholder="Ders notunu girin" />
+            <label for="dersNotu1">1. Ders Notu</label>
+            <input type="number" id="dersNotu1" placeholder="1. Ders Notunu Girin" />
           </div>
 
-          <button onclick="hesapla()">Hesapla</button> <br><br>
-
-          <p id="ortalamaSonuc" widht: 100px; style="color: white; text-align: center;"></p>
-
-          <div id="notOrtalamalar">
-
+          <div class="form-group">
+            <label for="dersNotu2">2. Ders Notu</label>
+            <input type="number" id="dersNotu2" placeholder="2. Ders Notunu Girin" />
           </div>
+
+          <div class="form-group">
+            <label for="dersNotu3">3. Ders Notu</label>
+            <input type="number" id="dersNotu3" placeholder="3. Ders Notunu Girin" />
+          </div>
+
+          <button onclick="hesapla()">Hesapla</button>
+          <div id="notOrtalamalar"></div>
         </div>
       </div>
-      <div class="item5" id="sag">
 
+      <div class="item5" id="sag">
       </div>
 
       <div class="item4" id="alt">
-
+        
       </div>
     </div>
-    <script src="script.js"></script>
+    <script src="script.js"></script>  
   </body>
 </html>
