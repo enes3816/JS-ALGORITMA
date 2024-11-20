@@ -66,44 +66,30 @@ function hesapla() {
 
 // Eksik not hesaplama fonksiyonu
 function hesaplaEksikNot(dersNotu1, dersNotu2, dersNotu3, ortalama) {
-    // Eğer herhangi bir sınav 0 (eksik) ise, o sınavın alınması gereken notu hesapla
+    let eksikNot = null;
+    let gerekenToplam = hedefOrtalama * 3; // Hedef ortalama ile 3 sınavın toplamı
+    let mevcutToplam = dersNotu1 + dersNotu2 + dersNotu3;
+
+    // Eğer herhangi bir sınav 0 ise, o sınavın alınması gereken notu hesapla
     if (dersNotu1 === 0) {
-        let gerekenToplam = hedefOrtalama * 3;
-        let mevcutToplam = dersNotu2 + dersNotu3;
-        let gerekenNot = gerekenToplam - mevcutToplam;
-
-        if (gerekenNot > 100) {
-            return "Geçemezsiniz"; // Eğer gereken not 100'den fazla ise, geçemez
-        }
-        
-        return gerekenNot.toFixed(2); // Alınması gereken notu döndür
-    } 
-    
-    if (dersNotu2 === 0) {
-        let gerekenToplam = hedefOrtalama * 3;
-        let mevcutToplam = dersNotu1 + dersNotu3;
-        let gerekenNot = gerekenToplam - mevcutToplam;
-
-        if (gerekenNot > 100) {
-            return "Geçemezsiniz"; // Eğer gereken not 100'den fazla ise, geçemez
-        }
-        
-        return gerekenNot.toFixed(2); // Alınması gereken notu döndür
-    } 
-    
-    if (dersNotu3 === 0) {
-        let gerekenToplam = hedefOrtalama * 3;
-        let mevcutToplam = dersNotu1 + dersNotu2;
-        let gerekenNot = gerekenToplam - mevcutToplam;
-
-        if (gerekenNot > 100) {
-            return "Geçemezsiniz"; // Eğer gereken not 100'den fazla ise, geçemez
-        }
-        
-        return gerekenNot.toFixed(2); // Alınması gereken notu döndür
+        eksikNot = gerekenToplam - (dersNotu2 + dersNotu3);
+    } else if (dersNotu2 === 0) {
+        eksikNot = gerekenToplam - (dersNotu1 + dersNotu3);
+    } else if (dersNotu3 === 0) {
+        eksikNot = gerekenToplam - (dersNotu1 + dersNotu2);
     }
-    
-    // Eğer tüm sınavlar tamamlanmışsa, eksik not yok
+
+    // Eğer eksik not hesaplandıysa ve 100'ü geçiyorsa, geçemez
+    if (eksikNot > 100) {
+        return "Geçemezsiniz";
+    }
+
+    // Eğer eksik not hesaplandıysa, gereken notu döndür
+    if (eksikNot !== null) {
+        return eksikNot.toFixed(2);
+    }
+
+    // Tüm sınavlar tamamlandıysa, eksik not yok
     return null;
 }
 
