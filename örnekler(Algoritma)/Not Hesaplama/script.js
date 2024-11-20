@@ -27,14 +27,27 @@ function hesapla() {
     let toplamDersNotu = dersNotu1 + dersNotu2 + dersNotu3;
     let ortalama = toplamDersNotu / 3;
     let eksikNot = hesaplaEksikNot(ortalama);
+    let durum = hesaplaDurum(ortalama);
     
+    // Eğer eksik sınav varsa, eksik sınav için gereken not hesapla
+    let eksikNotDurum = "";
+    if (durum === "Kaldı") {
+        eksikNotDurum = `<p><strong>Eksik Not: ${eksikNot}</strong></p>`;
+    }
+
+    // Kartın rengi, durumuna göre değişsin
+    if (durum === "Sorumlu") {
+        notKutusu.style.backgroundColor = "#ff0000"; // Kırmızı renk
+    }
+
     notKutusu.innerHTML = `
         <h3>${dersAdi} - Notlar</h3>
         <p>1. Sınav Notu: ${dersNotu1}</p>
         <p>2. Sınav Notu: ${dersNotu2}</p>
         <p>3. Sınav Notu: ${dersNotu3}</p>
         <p><strong>Ortalama: ${ortalama.toFixed(2)}</strong></p>
-        <p><strong>Minimum Geçmesi Gereken Not: ${eksikNot}</strong></p>
+        <p><strong>Durum: ${durum}</strong></p>
+        ${eksikNotDurum}
     `;
     
     // Yeni kartı sayfaya ekle
@@ -51,7 +64,18 @@ function hesapla() {
 }
 
 function hesaplaEksikNot(ortalama) {
-    return (ortalama < hedefOrtalama) ? (hedefOrtalama * 3 - toplamNot).toFixed(2) : 0;
+    if (ortalama < hedefOrtalama) {
+        return (hedefOrtalama * 3 - (ortalama * 3)).toFixed(2);
+    }
+    return 0;
+}
+
+function hesaplaDurum(ortalama) {
+    if (ortalama >= hedefOrtalama) {
+        return "Geçti";
+    } else {
+        return "Sorumlu";
+    }
 }
 
 function hesaplaGenelOrtalama() {
