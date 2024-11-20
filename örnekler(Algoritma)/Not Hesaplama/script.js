@@ -1,6 +1,7 @@
 let dersAdi = "";
 let toplamNot = 0;
 let hedefOrtalama = 50; 
+let tumNotlar = []; // Tüm ders notlarını tutacak dizi
 
 function hesapla() {
     dersAdi = document.getElementById('dersAdi').value;
@@ -16,34 +17,33 @@ function hesapla() {
         return;
     }
 
-    toplamNot = dersNotu1 + dersNotu2 + dersNotu3;
-    let ortalama = toplamNot / 3;
+    // Yeni dersin notlarını array'e ekle
+    tumNotlar.push({dersAdi, dersNotu1, dersNotu2, dersNotu3});
 
-    let eksikNot = hesaplaEksikNot(ortalama);
-
-    // Not kutusunu oluştur
+    // Her yeni ders için bir kart oluştur
     let notKutusu = document.createElement('div');
     notKutusu.classList.add('not-kutusu');
+    
+    let toplamDersNotu = dersNotu1 + dersNotu2 + dersNotu3;
+    let ortalama = toplamDersNotu / 3;
+    let eksikNot = hesaplaEksikNot(ortalama);
+    
     notKutusu.innerHTML = `
         <h3>${dersAdi} - Notlar</h3>
-        <p>1. Not: ${dersNotu1}</p>
-        <p>2. Not: ${dersNotu2}</p>
-        <p>3. Not: ${dersNotu3}</p>
+        <p>1. Sınav Notu: ${dersNotu1}</p>
+        <p>2. Sınav Notu: ${dersNotu2}</p>
+        <p>3. Sınav Notu: ${dersNotu3}</p>
         <p><strong>Ortalama: ${ortalama.toFixed(2)}</strong></p>
         <p><strong>Minimum Geçmesi Gereken Not: ${eksikNot}</strong></p>
     `;
-    document.getElementById('notOrtalamalar').innerHTML = ''; 
+    
+    // Yeni kartı sayfaya ekle
     document.getElementById('notOrtalamalar').appendChild(notKutusu);
 
-    // Genel ortalamayı hesapla ve ekle
-    let genelOrtalama = (ortalama).toFixed(2);
-    let genelOrtalamaDiv = document.createElement('div');
-    genelOrtalamaDiv.innerHTML = `
-        <p><strong>Genel Ortalama: ${genelOrtalama}</strong></p>
-    `;
-    document.getElementById('genelOrtalama').appendChild(genelOrtalamaDiv);
+    // Genel ortalamayı güncelle
+    hesaplaGenelOrtalama();
 
-    
+    // Formu temizle
     document.getElementById('dersAdi').value = '';
     document.getElementById('dersNotu1').value = '';
     document.getElementById('dersNotu2').value = '';
@@ -52,4 +52,29 @@ function hesapla() {
 
 function hesaplaEksikNot(ortalama) {
     return (ortalama < hedefOrtalama) ? (hedefOrtalama * 3 - toplamNot).toFixed(2) : 0;
+}
+
+function hesaplaGenelOrtalama() {
+    let toplamOrtalama = 0;
+    let dersSayisi = tumNotlar.length;
+    
+    // Tüm derslerin ortalamalarını topla
+    tumNotlar.forEach(ders => {
+        let dersToplamNotu = ders.dersNotu1 + ders.dersNotu2 + ders.dersNotu3;
+        let dersOrtalama = dersToplamNotu / 3;
+        toplamOrtalama += dersOrtalama;
+    });
+
+    // Genel ortalamayı hesapla
+    let genelOrtalama = (toplamOrtalama / dersSayisi).toFixed(2);
+    
+    // Genel ortalama div'ini güncelle
+    let genelOrtalamaDiv = document.createElement('div');
+    genelOrtalamaDiv.innerHTML = `
+        <p><strong>Genel Ortalama: ${genelOrtalama}</strong></p>
+    `;
+
+    // Genel ortalamayı sayfada güncelle
+    document.getElementById('genelOrtalama').innerHTML = '';
+    document.getElementById('genelOrtalama').appendChild(genelOrtalamaDiv);
 }
