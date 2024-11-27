@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 62.5%; 
+    font-size: 62.5%;
     background-color: #f4f4f4;
     min-height: 100vh;
     overflow-x: hidden;
@@ -27,6 +27,8 @@ body {
     text-align: center;
     line-height: 50px;
     font-size: 18px;
+    z-index: 100; 
+    position: relative;
 }
 
 #sol {
@@ -69,6 +71,7 @@ body {
     text-transform: uppercase;
     padding: 20px;
     box-sizing: border-box;
+    position: relative;
 }
 
 #alt {
@@ -113,17 +116,18 @@ body {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
 .sidenav {
-    height: 100%;
-    width: 0; /* JavaScript ile dinamik olarak genişlik ayarlanacak */
+    height: 0;
+    width: 0; 
     position: fixed;
     z-index: 1;
-    top: 0;
+    top: 100px; 
     right: 0;
-    background-color: white;
-    overflow-x: hidden; /* Yatay kaydırmayı devre dışı bırak */
-    transition: 0.5s; /* Sidenav'da kaymaya 0,5 saniye geçiş efekti */
-    padding-top: 60px; /* İçeriği üstten 60 piksel yerleştirin */
+    background-color: wheat;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 10px; 
 }
 
 .sidenav a {
@@ -136,7 +140,7 @@ body {
 }
 
 .sidenav a:hover {
-    color: #f1f1f1; 
+    color: wheat; 
 }
 
 .sidenav .closebtn {
@@ -147,11 +151,15 @@ body {
     margin-right: 50px;
 }
 
-  
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
+#sag span {
+    display: none; 
+}
+
+@media screen and (max-width: 768px) {
+    #sag span {
+        display: block; 
+    }
+}
 
 button {
     background-color: #27989A;
@@ -214,4 +222,3 @@ button:hover {
 .not-kutusu p {
     font-size: 0.9rem;
 }
-

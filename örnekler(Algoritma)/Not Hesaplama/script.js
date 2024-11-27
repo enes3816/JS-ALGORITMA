@@ -2,20 +2,19 @@ let dersAdi = "";
 let hedefOrtalama = 50;
 let tumNotlar = []; 
  
-// Hamburger menüsünü açma işlevi
 function openNav() {
-    // Sağdaki kutunun genişliğini al
     var sagWidth = document.getElementById("sag").offsetWidth;
-    
-    // Sidenav'in genişliğini sağdaki kutunun genişliği kadar ayarla
+    var sagHeight = document.getElementById("sag").offsetHeight;
+
     document.getElementById("YanMenu").style.width = sagWidth + "px";
+    document.getElementById("YanMenu").style.height = sagHeight + "px";
 }
 
-// Hamburger menüsünü kapama işlevi
 function closeNav() {
-    // Sidenav'in genişliğini sıfırla
     document.getElementById("YanMenu").style.width = "0";
+    document.getElementById("YanMenu").style.height = "0";
 }
+
 
 
 function hesapla() {
