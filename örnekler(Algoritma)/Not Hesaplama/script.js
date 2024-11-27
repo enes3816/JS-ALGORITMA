@@ -48,7 +48,7 @@ function hesapla() {
     }
 
     if (durum === "Sorumlu") {
-        notKutusu.style.backgroundColor = "#ff0000"; 
+        notKutusu.style.backgroundColor = "Red"; 
     }
 
     notKutusu.innerHTML = ` 
