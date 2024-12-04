@@ -160,7 +160,6 @@ body {
         display: block; 
     }
 
-    
     .form-group {
         flex-direction: column;
     }
@@ -175,7 +174,6 @@ body {
         margin-bottom: 15px; 
     }
 
-    
     #notOrtalamalar {
         display: block;
         width: 100%;
@@ -185,6 +183,9 @@ body {
     .not-kutusu {
         width: 100%;  
         margin-bottom: 15px; 
+        margin-left: 0;
+        margin-right: 0;
+        flex: 0 0 100%; 
     }
 }
 

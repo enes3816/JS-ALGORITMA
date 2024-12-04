@@ -88,7 +88,7 @@ function hesaplaEksikNot(dersNotu1, dersNotu2, dersNotu3, ortalama) {
     if (eksikNot > 100) {
         return "Geçemezsiniz";
     }
-
+    
     if (eksikNot !== null) {
         return eksikNot.toFixed(2);
     }
