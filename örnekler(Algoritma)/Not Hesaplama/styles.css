@@ -160,6 +160,92 @@ body {
     display: none; 
 }
 
+.menu-box{
+    width: 100px;
+    height: 50px;
+    background-color: red;
+    margin-top: 20px;
+    cursor: pointer; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Sol kutu */
+#sol {
+    grid-area: item2;
+    background-color: #0D275A;
+    color: white;
+    text-align: center;
+    line-height: 100%;
+    text-transform: uppercase;
+    padding: 20px;
+    box-sizing: border-box;
+    height: auto;  /* Yüksekliği içeriğe göre otomatik ayarla */
+}
+
+/* Mobil görünümde sol kutuyu üst ve orta kısım arasına yerleştirme */
+@media screen and (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr 2fr 1fr; /* Orta kutu daha geniş olacak */
+        grid-template-areas:
+            "item1 item1 item1"
+            "item2 item3 item5"
+            "item4 item4 item4";
+    }
+
+    /* Sol kutu, üst kısmın altına ve orta kısmın üstüne yerleştirilecek */
+    #sol {
+        grid-column: 1 / 2; /* Sol kutu, sol sütunda yer alacak */
+        grid-row: 2 / 3;    /* Sol kutu, üst ile orta arasındaki alanda olacak */
+        padding: 10px;
+        height: auto;
+    }
+
+    /* Sol kutu içindeki menü öğeleri yatay olarak hizalanacak */
+    #sol ul {
+        list-style-type: none; /* Liste işaretlerini kaldırıyoruz */
+        padding: 0;
+        display: flex;         /* Flexbox ile yatay hizalama */
+        justify-content: space-around; /* Öğeleri eşit aralıklarla hizala */
+        flex-wrap: wrap;       /* İçerik sığmazsa alt satıra geçsin */
+    }
+
+    #sol ul li {
+        display: inline-block; /* Liste elemanlarını inline-block yapıyoruz */
+        margin: 10px 0;        /* Öğeler arasında dikeyde boşluk bırakıyoruz */
+    }
+
+    /* Menü kutularını yatay yapmak için */
+    .menu-box {
+        width: 100px;
+        height: 50px;
+        background-color: red;
+        margin-top: 20px;
+        cursor: pointer; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    /* Menü kutularını yatay hizalamak için */
+    .menu-box {
+        transform: rotate(0deg); /* Yatayda olacak şekilde dönüşüm uygulanacak */
+        white-space: nowrap; /* Yazının satır sonuna geçmesini engeller */
+    }
+}
+
+
+.menu-box:hover {
+    background-color: #b30000; 
+}
+
 @media screen and (max-width: 768px) {
     #sag span {
         display: block; 
@@ -213,7 +299,28 @@ body {
         text-align: center;
         padding: 20px;
     }
+
+    .grid-container {
+        grid-template-columns: 1fr 2fr 1fr; 
+        grid-template-areas:
+            "item1 item1 item1"
+            "item2 item3 item5"
+            "item4 item4 item4";
+    }
+
+    #sol {
+        grid-column: 1 / 2; 
+        height: auto; 
+        padding: 15px;
+        margin-bottom: 1px; 
+    }
+
+    .menu-box {
+           
+        margin-top: 10px;     
+    }
 }
+
 
 button {
     background-color: #27989A;
