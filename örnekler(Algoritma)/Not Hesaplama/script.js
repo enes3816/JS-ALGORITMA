@@ -17,6 +17,7 @@ function closeNav() {
 
 
 
+
 function hesapla() {
     dersAdi = document.getElementById('dersAdi').value;
     let dersNotu1 = Number(document.getElementById('dersNotu1').value);
